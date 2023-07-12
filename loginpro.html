@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./login.js">
+<style>
+    .logmain{
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        height: 70vh;
+        margin: auto;
+        position: relative;
+    }
+    .images{
+        width: 80%;
+    }
+    .images1{
+        width: 90%;
+        height: 100vh;
+    }
+    .images h1{
+           text-align: center;
+    }
+    .btn{
+        background: transparent;
+        width: 100%;
+        height: 6vh;
+        border-radius: 10px;
+        text-align: center;
+       
+    }
+    .btn img{
+        width: 20px;
+        height: 20px;
+    }
+    .btnimg{
+         margin-top: 5px;
+    }
+.line{
+    width: 35%;
+    height: 2px;
+    background-color: rgb(147, 151, 154);
+  
+    margin-top: 4px;
+    margin-left: 4px;
+   margin-right: 4px;
+}
+.or {
+    font-size: 10px;
+}
+.etext input{
+    width: 100%;
+    height: 4vh;
+   margin-top: -20px;
+}
+.etext input:hover{
+    box-shadow: 0 0 10px rgb(78, 255, 47);
+}
+.for{
+    position: relative;
+    padding-left: 75%;
+   
+}
+.btn1{
+    background: transparent;
+        width: 100%;
+        height: 5vh;
+        border-radius: 10px;
+        background-color: rgb(76, 230, 76);
+}
+.line1{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(147, 151, 154);
+    font-size: 15px;
+}
+#d1{
+    text-align: center;
+  
+}
+#d1 a{
+    text-decoration: none;
+    color: rgb(147, 151, 154);
+}
+#d1 a:hover{
+    text-decoration: none;
+    color: rgb(5, 5, 5);
+}
+.flex{
+    display: flex;
+}
+.logo_img{
+    padding-left: 40px;
+    border-radius: 30%;
+}
+/* .body{
+    background: linear-gradient(-45deg,#23a6d5,#23d5ab,#ff3d02,#e73c7e);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite;
+    height: 100vh;
+}
+@keyframes gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+} */
+
+
+</style>
+</head>
+<body>
+    <div class="body">
+    <div class="logmain">
+        <div>
+            <img class="images1" src="https://freeshoppingdeal.com/wp-content/uploads/2020/03/photo_2020-03-27_13-08-56.jpg" alt="">
+        </div>
+
+        <div class="images">
+            <img class="logo_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcO0IpFBRsQJKR-8LiMASNknnTY0x9q7QMMAxomXpAFHMaolEEhPI9AiGArMuYSrYWlDc&usqp=CAU" alt="">
+        <h1>welcome..!</h1>
+        
+        <button class="btn"><img class="btnimg" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Login with Google</button>
+        <br/><br/>
+        <div class="flex">
+
+            <div class="line"></div>
+             <div class="or"> OR LOGIN WITH EMAIL</div> 
+            <div class="line"></div>
+      
+            </div>
+        
+
+        <div class="etext">
+            <h5>Eamil address</h5>
+            <input type="text" id="emailtext" placeholder="Enter email" onblur="valemail(this)">
+
+            <h5>password</h5>
+            <input type="password" id="pwdtext" placeholder="password" onkeyup="fun(this)">
+        </div>
+        <h5 class="for">forgot password?</h5>
+        <button class="btn1" onclick="login()">Login</button><br/><br/>
+        <div class="line1"></div>
+        
+
+        <h5 id="d1">Don’t have an account?<a href="./signpro.html">sign up</a></h5>
+
+
+    </div>
+    </div>
+</div>
+    <script>
+    function fun(e){
+        let txr=document.getElementById('input')
+        if(/^[A-Z]/.test(e.value)){
+            e.style.border="2px solid green"
+        }
+        else{
+            e.style.border=" 2px solid red"
+        }
+        if(/[a-z]/.test(e.value)){
+            e.style.color="2px solid green"
+        }
+        else{
+            e.style.color="2px solid red"
+        }
+        if(/[0-9]/.test(e.value)){
+            e.style.color="2px solid green"
+        }
+        else{
+            e.style.color="2px solid red"
+        }
+        if(/[@#$%^&*!]/.test(e.value)){
+            e.style.color="2px solid green"
+        }
+        else{
+            e.style.color="2px solid red"
+        }
+        if(e.value.length>=8){
+            e.style.color="2px solid green"
+        }
+        else{
+            e.style.color="2px solid red"
+        }
+        
+
+    }
+    </script>
+    <script>
+        function valemail(e){
+            let re=/^[a-zA-Z]{1,}[.]?[a-z0-9]{1,}[@][a-z]{3,}[.](com|co.in|in|org|asia|org.in)$/
+            if(re.test(e.value)){
+                e.style.border="2px solid green"
+            }
+            else{
+                e.style.border="2px solid red"
+            }
+
+        }
+    </script>
+</body>
+</html>
